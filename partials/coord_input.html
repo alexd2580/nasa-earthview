@@ -2,33 +2,41 @@
 <div class="container">
     <h1>Input Coordinates</h1>
     <div class="row">
-        Input the coordinates (longitude, latitude) and the approximate date of the location you want to see from space.
+        <p>Input the coordinates (longitude, latitude) and the approximate date of the location you want to see from space.</p>
     </div>
     <div class="row"></div>
     <div>
         <form ng-submit="show_earth_at(longitude, latitude)">
             <div class="row">
-                Longitude: <input ng-model="longitude">
-                Latitude: <input ng-model="latitude">
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    Year:
-                    <select ng-model="year">
-                        <option ng-repeat="y in years" value="{{y}}">{{y}}</option>
-                    </select>
-                    Month:
-                    <select ng-model="month">
-                        <option ng-repeat="m in months" value="{{m}}">{{m}}</option>
-                    </select>
-                    Day:
-                    <select ng-model="day">
-                        <option ng-repeat="d in days" value="{{d}}">{{d}}</option>
-                    </select>
+                <div class="col-md-1">
+                    <p>Longitude</p>
+                    <p>Latitude</p>
+                </div>
+                <div class="col-md-3">
+                    <p><input ng-model="longitude"></p>
+                    <p><input ng-model="latitude"></p>
                 </div>
             </div>
             <div class="row">
-                <input type="submit" value="Watch from space" />
+                <div class="col-md-1">
+                    <p>Year</p>
+                    <p>Month</p>
+                    <p>Day</p>
+                </div>
+                <div class="col-md-3">
+                    <p><select ng-model="year">
+                        <option ng-repeat="y in years" value="{{y}}">{{y}}</option>
+                    </select></p>
+                    <p><select ng-model="month">
+                        <option ng-repeat="m in months" value="{{m}}">{{m}}</option>
+                    </select></p>
+                    <p><select ng-model="day">
+                        <option ng-repeat="d in days" value="{{d}}">{{d}}</option>
+                    </select></p>
+                </div>
+            </div>
+            <div class="row">
+                <p><input type="submit" value="Watch from space" /></p>
             </div>
         </form>
     </div>

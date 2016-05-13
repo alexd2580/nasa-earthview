@@ -16,6 +16,10 @@ nasa_earthview_app.config(['$routeProvider',
                 templateUrl: 'partials/earth_view.html',
                 controller: 'DisplayImage'
             })
+            .when('/future_features', {
+                templateUrl: 'partials/future_features.html',
+                controller: 'futureFeatures'
+            })
             .otherwise({
                 redirectTo: '/coords/30.316778/59.949737/2014-02-01'
             });
