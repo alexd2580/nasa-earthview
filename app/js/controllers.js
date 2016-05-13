@@ -48,6 +48,9 @@ nasa_earthview_controllers.controller('DisplayImage',
     ['$scope', '$http', '$routeParams', '$location',
     function($scope, $http, $routeParams, $location) {
         $scope.data = $routeParams;
+        $scope.date = "the day before nasa took images from space";
+        $scope.cloudiness = "really";
+        
         var longitude = $routeParams.longitude;
         var latitude = $routeParams.latitude;
         var date = $routeParams.date;
@@ -96,4 +99,10 @@ nasa_earthview_controllers.controller('InputCoordinates',
             $location.url('/earth_view/' + longi + '/' + lati + '/' +
                 $scope.year + '-' + $scope.month + '-' + $scope.day);
         };
+}]);
+
+nasa_earthview_controllers.controller('FutureFeatures',
+    ['$location',
+    function($location) {
+        // not much to do
 }]);
