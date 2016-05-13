@@ -17,6 +17,6 @@ nasa_earthview_app.config(['$routeProvider',
                 controller: 'DisplayImage'
             })
             .otherwise({
-                redirectTo: '/coords/30.316778/59.949737'
+                redirectTo: '/coords/30.316778/59.949737/2014-02-01'
             });
 }]);
