@@ -1,5 +1,20 @@
 /* app css stylesheet */
 
 body {
-  padding-top: 65px; 
+    padding-top: 50px;
+    color: #fff;
+    background-color: #333;
+    font-family: 'Open Sans', Arial, Helvetica, Sans-Serif;
+}
+.full {
+    background: url('../background.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+input, select, textarea {
+    color: #fff;
+    background-color: #333;
+    font-family: 'Open Sans', Arial, Helvetica, Sans-Serif;
 }
