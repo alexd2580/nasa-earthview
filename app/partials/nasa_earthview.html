@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-lg-8">
+        <div class="page-header">
+            <h1 class="glowtext">Nasa-earthview</h1>
+            <p>
+                This website features a simple application for accessing images of the earth taken from earth's orbit by the Landsat 8 satellite.
+                Images are taken approximately every 16 days. The website itself is built with AngularJS and Bootstrap and serves as an example
+                of a simple-to-create and simple-to-use client-side web application. The displayed images are fetched from the NASA data portal.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="well" ng-show="apod_visible">
+    <h2 class="glowtext">Nasa Astronomy Picture of the Day</h2>
+    <img ng-src="{{hdurl}}" width="100%"/>
+    <p>Image Credits: {{copyright}} {{date}}</p>
+
+    <h3 class="glowtext">{{title}}</h3>
+    <p>{{explanation}}</p>
+</div>
