@@ -199,8 +199,12 @@ nasa_earthview_controllers.controller('FutureFeatures', [
  * Controller for the title page view.
  * not much to do though
  */
-nasa_earthview_controllers.controller('NasaEarthview', ['$scope', '$http',
-    function($scope, $http) {
+nasa_earthview_controllers.controller('NasaEarthview', ['$scope', '$http', '$location',
+    function($scope, $http, $location) {
+        $scope.redirect_back = function() {
+            $location.url('/coords');
+        };
+
         $scope.apod_visible = false;
         get_apod($scope, $http);
     }
