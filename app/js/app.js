@@ -8,6 +8,9 @@ var nasa_earthview_app = angular.module('nasa_earthview_app',
 nasa_earthview_app.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider
+            .when('/coords', {
+                redirectTo: '/coords/30.316778/59.949737/2014-02-01'
+            })
             .when('/coords/:pre_longi/:pre_lati/:pre_date', {
                 templateUrl: 'partials/coord_input.html',
                 controller: 'InputCoordinates'
@@ -20,7 +23,11 @@ nasa_earthview_app.config(['$routeProvider',
                 templateUrl: 'partials/future_features.html',
                 controller: 'FutureFeatures'
             })
+            .when('/nasa_earthview', {
+                templateUrl: 'partials/nasa_earthview.html',
+                controller: 'NasaEarthview'
+            })
             .otherwise({
-                redirectTo: '/coords/30.316778/59.949737/2014-02-01'
+                redirectTo: '/nasa_earthview'
             });
 }]);

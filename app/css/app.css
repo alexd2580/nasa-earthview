@@ -47,6 +47,7 @@ input, select, textarea {
 
 .text_in_well {
     padding-left: 50px;
+    padding-right: 50px;
 }
 
 .custom_centered {

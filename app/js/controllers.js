@@ -3,7 +3,8 @@
 /**
  * The base URL to get images from space
  */
-var nasa_url = "https://api.nasa.gov/planetary/earth/imagery";
+var nasa_earthview = "https://api.nasa.gov/planetary/earth/imagery";
+var nasa_apod = "https://api.nasa.gov/planetary/apod";
 
 /**
  * The api key to be supplied with each request, registered to
@@ -74,7 +75,7 @@ function get_image_url(deps, longitude, latitude, date) {
     }
 
     deps.http({
-            url: nasa_url,
+            url: nasa_earthview,
             method: 'GET',
             params: params
         })
@@ -102,7 +103,33 @@ function get_image_url(deps, longitude, latitude, date) {
             }
         })
         .error(function(err, err2) {
-            alert("" + err + " " + err2);
+            alert("Could not access nasa api " + err + " " + err2);
+        });
+}
+
+function get_apod($scope, $http) {
+
+    $http({
+            url: nasa_apod,
+            method: 'GET',
+            params: { api_key: api_key }
+        })
+        .success(function(data) {
+            $scope.title = data.title; // "Falcon 9 and Milky Way",
+            $scope.copyright = data.copyright; // "Derek Demeter",
+            $scope.date = data.date; // "2016-05-14",
+            $scope.explanation = data.explanation; // "On May 6, the after midnight launch of a SpaceX Falcon 9 rocket lit up dark skies over Merritt Island, planet Earth. Its second stage bound for Earth orbit, the rocket's arc seems to be on course for the center of the Milky Way in this pleasing composite image looking toward the southeast. Two consecutive exposures made with camera fixed to a tripod were combined to follow rocket and home galaxy. A 3 minute long exposure at low sensitivity allowed the rocket's first stage burn to trace the bright orange arc and a 30 second exposure at high sensitivity captured the stars and the faint Milky Way. Bright orange Mars dominates the starry sky at the upper right. A few minutes later, booster engines were restarted and the Falcon 9's first stage headed for a landing on the autonomous spaceport drone ship Of Course I Still Love You, patiently waiting in the Atlantic 400 miles east of the Cape Canaveral launch site.",
+            $scope.hdurl = data.hdurl; // "http://apod.nasa.gov/apod/image/1605/Spacexmilkyway_large_derekdemeter2048.jpg",
+
+            var media_type = data.media_type;
+            if(media_type == "image")
+                $scope.apod_visible = true;
+            //"media_type": "image",
+            //"service_version": "v1",
+            //"url": "http://apod.nasa.gov/apod/image/1605/Spacexmilkyway_large_derekdemeter1024.jpg"
+        })
+        .error(function(err, err2) {
+            alert("Could not access nasa api " + err + " " + err2);
         });
 }
 
@@ -162,8 +189,19 @@ nasa_earthview_controllers.controller('InputCoordinates', ['$scope', '$location'
  * Controller for the "optional future features" view.
  * not much to do though
  */
-nasa_earthview_controllers.controller('FutureFeatures', ['$location',
-    function($location) {
+nasa_earthview_controllers.controller('FutureFeatures', [
+    function() {
         // not much to do
+    }
+]);
+
+/**
+ * Controller for the title page view.
+ * not much to do though
+ */
+nasa_earthview_controllers.controller('NasaEarthview', ['$scope', '$http',
+    function($scope, $http) {
+        $scope.apod_visible = false;
+        get_apod($scope, $http);
     }
 ]);
