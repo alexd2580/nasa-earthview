@@ -1,29 +1,27 @@
-<div class="container container-fluid">
-    <h1>Here you go</h1>
-    <div class="row">
-        <p>This is the location you selected on
-            {{date}}.<br>
-            It's currently
-            {{cloudiness}}
-            cloudy.</p>
+<h1>Here you go</h1>
+<div class="row">
+    <p>This is the location you selected on
+        {{date}}.<br>
+        It's currently
+        {{cloudiness}}
+        cloudy.</p>
+</div>
+<div class="row">
+    <p><img ng-src="{{image_url}}" alt="{{asd}}"></p>
+</div>
+<div class="row">
+    <div class="col-md-3">
+        <p>
+            <button ng-click="redirect_back()" class="btn btn-primary">
+                Select other coordinates
+            </button>
+        </p>
     </div>
-    <div class="row">
-        <p><img ng-src="{{image_url}}" alt="{{asd}}"></p>
-    </div>
-    <div class="row">
-        <div class="col-md-3">
-            <p>
-                <button ng-click="redirect_back()" class="btn btn-primary">
-                    Select other coordinates
-                </button>
-            </p>
-        </div>
-        <div class="col-md-3">
-            <p>
-                <button ng-click="update_image()" ng-show="better_image_found" class="btn btn-success">
-                    View with less clouds
-                </button>
-            </p>
-        </div>
+    <div class="col-md-3">
+        <p>
+            <button ng-click="update_image()" ng-show="better_image_found" class="btn btn-success">
+                View with less clouds
+            </button>
+        </p>
     </div>
 </div>
