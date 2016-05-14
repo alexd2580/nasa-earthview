@@ -26,8 +26,8 @@ input, select, textarea {
 
 .jumbotron {
     height: 350px;
-    color: rgba(0,0,0,0.8);
-    text-shadow: white 0.1em 0.1em 0.1em;
+    color: black;
+    text-shadow: 0em 0em 1em #FFFFFF, 0em 0em 1em #FFFFFF;
     background: transparent;
 }
 
