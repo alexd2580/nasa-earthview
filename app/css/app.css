@@ -23,3 +23,25 @@ input, select, textarea {
     color: #333;
     background-color: #fff;
 }
+
+.jumbotron {
+    height: 350px;
+    color: rgba(0,0,0,0.8);
+    text-shadow: white 0.1em 0.1em 0.1em;
+    background: transparent;
+}
+
+.well {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.text_in_well {
+    padding-left: 50px;
+}
+
+.custom_centered {
+    text-align: center;
+}
