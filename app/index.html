@@ -2,6 +2,9 @@
 <html lang="en" class="full" ng-app="nasa_earthview_app">
     <head>
         <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <title>Earth view app</title>
         <link rel="shortcut icon" href="favicon.ico"/>
 
@@ -11,6 +14,13 @@
         <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
         <link rel="stylesheet" href="node_modules/tiny-date-picker/tiny-date-picker.css">
         <link rel="stylesheet" href="css/app.css">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
 
         <script src="node_modules/angular/angular.js"></script>
         <script src="node_modules/angular-route/angular-route.js"></script>
@@ -44,8 +54,8 @@
                 <!--/.nav-collapse -->
             </div>
         </nav>
-        <div class="col-md-10">
-            <div class="container" ng-view></div>
-        </div>
+
+        <div class="container" ng-view></div>
+
     </body>
 </html>
