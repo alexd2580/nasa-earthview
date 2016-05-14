@@ -5,24 +5,32 @@
     </div>
     <div class="row"></div>
     <div>
-        <form ng-submit="show_earth_at(longitude, latitude, date)">
-            <div class="row">
-                <div class="col-md-1">
-                    <p>Longitude</p>
-                    <p>Latitude</p>
+        <form ng-submit="show_earth_at(longitude, latitude, date)" class="form-horizontal">
+            <fieldset>
+                <div class="form-group">
+                    <label for="input_longitude" class="control-label col-xs-2">Longitude</label>
+                    <div class="col-xs-5">
+                        <input type="text" class="form-control" id="input_longitude" ng-model="longitude">
+                    </div>
                 </div>
-                <div class="col-md-3">
-                    <p><input ng-model="longitude"></p>
-                    <p><input ng-model="latitude"></p>
+                <div class="form-group">
+                    <label for="input_latitude" class="control-label col-xs-2">Latitude</label>
+                    <div class="col-xs-5">
+                        <input type="text" class="form-control" id="input_latitude" ng-model="longitude">
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <p>Pick a date</p>
-                <p><input type="text" class="date_picker" tabindex="400" value="wurst" ng-model="date"/></p>
-            </div>
-            <div class="row">
-                <p><input type="submit" value="Watch from space" class="btn btn-primary"/></p>
-            </div>
+                <div class="form-group">
+                    <label for="input_date" class="control-label col-xs-2">Pick a date</label>
+                    <div class="col-xs-5">
+                        <input type="text" class="form-control date_picker" tabindex="400" value="wurst" ng-model="date" id="date">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-offset-2 col-xs-5">
+                        <button type="submit" class="btn btn-primary">Watch from space</button>
+                    </div>
+                </div>
+            </fieldset>
         </form>
     </div>
 </div>

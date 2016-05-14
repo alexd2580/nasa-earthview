@@ -7,7 +7,7 @@
         "angular": "1.4.x",
         "angular-mocks": "1.4.x",
         "jquery": "~2.1.1",
-        "bootstrap": "~3.1.1",
+        "bootstrap": "~3.3.6",
         "angular-route": "1.4.x",
         "tiny-date-picker": "1.0.0"
     }

@@ -18,3 +18,8 @@ input, select, textarea {
     background-color: #333;
     font-family: 'Open Sans', Arial, Helvetica, Sans-Serif;
 }
+
+.dp {
+    color: #333;
+    background-color: #fff;
+}
