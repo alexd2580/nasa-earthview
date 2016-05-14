@@ -6,7 +6,7 @@
     </div>
     <div class="row"></div>
     <div>
-        <form ng-submit="show_earth_at(longitude, latitude)">
+        <form ng-submit="show_earth_at(longitude, latitude, date)">
             <div class="row">
                 <div class="col-md-1">
                     <p>Longitude</p>
@@ -18,22 +18,8 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-1">
-                    <p>Year</p>
-                    <p>Month</p>
-                    <p>Day</p>
-                </div>
-                <div class="col-md-3">
-                    <p><select ng-model="year">
-                        <option ng-repeat="y in years" value="{{y}}">{{y}}</option>
-                    </select></p>
-                    <p><select ng-model="month">
-                        <option ng-repeat="m in months" value="{{m}}">{{m}}</option>
-                    </select></p>
-                    <p><select ng-model="day">
-                        <option ng-repeat="d in days" value="{{d}}">{{d}}</option>
-                    </select></p>
-                </div>
+                <p>Pick a date</p>
+                <p><input type="text" class="date_picker" tabindex="400" value="wurst" ng-model="date"/></p>
             </div>
             <div class="row">
                 <p><input type="submit" value="Watch from space" /></p>
