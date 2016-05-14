@@ -26,9 +26,16 @@ input, select, textarea {
 
 .jumbotron {
     height: 350px;
+    background: transparent;
+}
+
+.jumbotron h1 {
+    color: black;
+}
+
+.glowtext {
     color: black;
     text-shadow: 0em 0em 1em #FFFFFF, 0em 0em 1em #FFFFFF;
-    background: transparent;
 }
 
 .well {
